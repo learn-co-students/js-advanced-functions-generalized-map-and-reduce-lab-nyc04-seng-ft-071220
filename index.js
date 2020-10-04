@@ -9,11 +9,11 @@ function map(value, callback) {
 }
 
 function reduce(src, callback, startingPoint){
-  let r = (!!startingPoint) ? startingPoint : src[0]
+  let a = (!!startingPoint) ? startingPoint : src[0]
   let i = (!!startingPoint) ? 0 : 1
 
   for (; i < src.length; i++) {
-    r = callback(src[i], r)
+    a = callback(src[i], a)
   }
-  return r
+  return a
 }
