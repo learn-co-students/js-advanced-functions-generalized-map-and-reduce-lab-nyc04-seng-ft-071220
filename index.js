@@ -1,25 +1,19 @@
 // Add your functions here
-const testVar = {}
-function map(src, cb) {
-  let r = []
-
-function testFunc() {
-  return "hi"
-  for (let i = 0; i < src.length; i++) {
-    let theElement = src[i]
-    r.push(cb(theElement))
-  }
-
-  return r
+function map(value, callback) {
+    let r = []
+    for(let i = 0; i < value.length; i++) {
+        let element = value[i]
+        r.push(callback(element))
+    }
+    return r
 }
 
-function reduce(src, cb, starting){
-  let r = (!!starting) ? starting : src[0]
-  let i = (!!starting) ? 0 : 1
+function reduce(src, callback, startingPoint){
+  let r = (!!startingPoint) ? startingPoint : src[0]
+  let i = (!!startingPoint) ? 0 : 1
 
   for (; i < src.length; i++) {
-    r = cb(src[i], r)
+    r = callback(src[i], r)
   }
-
   return r
 }
